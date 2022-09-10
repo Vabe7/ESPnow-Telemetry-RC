@@ -9,7 +9,7 @@ Most of the work has been done by the two of them, I just combined the two and a
 ## Disclaimer ##
 This is **NOT** a commercial and reliable software, just something I fiddeld around with! There have been no range checks, no loss of connections tests and so on. I just can say that it works on my machine with my setup in a range of about 10m. I think it will work fine with further distances but I don't know. In theory there is an RSSI implementation but from my experience it seems random most of the time. Also my implementation of the PPM input is prone to cause latency. 
 
-I am flattered if you are interested in the program and want to try it out, but I won't take any responsibility for flyaway or crashed vehicles!
+I am flattered if you are interested in the program and want to try it out, but I won't take any responsibility for flyaway or crashed vehicles! Also take care about local radio transmission laws!
 
 ## Required Hardware
 For the receiver on the drone/plane/rover you need an ESP with the telemtry bridge software from yuri-rage.
@@ -41,3 +41,9 @@ The ESPnow setup is done via [config.h](include/config.h).
 **PPM_Channels** is the number of transmitted channels, this should be the same as in the transmitter
 
 The setup I have tested and can confirm working is an ESP32-WROOM-32U whith telemetry output on pin 4 to my Jumper T16 running Yaapu telemetry, PPM input on pin 18 and a telemetry output via UDP. This is also the setup for the configuration that is currently set up.
+
+## Useful links
+* Ardupilot forum post: https://discuss.ardupilot.org/t/espnow-telemetry-rc/90672
+* Serial bridge repository: https://github.com/yuri-rage/ESP-Now-Serial-Bridge
+* MavToPass repository: https://github.com/zs6buj/MavlinkToPassthru
+* Yaapu telemetry widget repository: https://github.com/yaapu/FrskyTelemetryScript
